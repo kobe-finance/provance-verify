@@ -1,0 +1,6 @@
+provance-verify
+Copyright 2026 Provance
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+It is the open-source offline verifier for Provance evidence bundles
+(decision A-079). The rest of provance-sdks is licensed separately.

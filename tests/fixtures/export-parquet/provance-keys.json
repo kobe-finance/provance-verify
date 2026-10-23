@@ -1,0 +1,17 @@
+{
+  "algorithm": "Ed25519",
+  "key_id": "334b3e0b9af69fdc",
+  "public_key": "c2uMteQzgLvqBQrqs3MT4SpNUBpRftKZUAcx85M3ND8=",
+  "signer": "development environment (not Provance production)",
+  "environment": "development",
+  "key_id_scheme": "first 16 hex characters of SHA-256 over the raw 32-byte Ed25519 public key",
+  "keys": [
+    {
+      "key_id": "334b3e0b9af69fdc",
+      "algorithm": "Ed25519",
+      "public_key": "c2uMteQzgLvqBQrqs3MT4SpNUBpRftKZUAcx85M3ND8=",
+      "status": "current",
+      "retired_at": null
+    }
+  ]
+}

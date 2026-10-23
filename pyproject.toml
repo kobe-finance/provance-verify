@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "provance-verify"
+version = "1.0.0b1"
+description = "Verify Provance evidence bundles offline: signatures by key id, RFC 8785 hashes, chains, RFC 9162 Merkle proofs and RFC 3161 timestamps"
+authors = ["Provance Team <sdk@provancelabs.org>"]
+license = "Apache-2.0"
+readme = "README.md"
+homepage = "https://provancelabs.org/evidence"
+repository = "https://github.com/kobe-finance/provance-verify"
+packages = [{ include = "provance_verify" }]
+include = ["LICENSE", "NOTICE", "SECURITY.md"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security :: Cryptography",
+]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+# The only required dependency (EVIDENCE_CHAIN §3.3, A-079): Ed25519, X.509 and CMS signature checks;
+# kept to the major version provance-api runs (47).
+cryptography = ">=42,<48"
+# Optional: reading Parquet rows of an export archive (provance-verify[parquet]).
+pyarrow = { version = "^25.0.1", optional = true }
+
+[tool.poetry.extras]
+parquet = ["pyarrow"]
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.0"
+pyarrow = "^25.0.1"  # the tests read Parquet rows
+
+[tool.poetry.scripts]
+provance-verify = "provance_verify.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
